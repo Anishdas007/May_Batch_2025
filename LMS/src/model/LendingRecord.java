@@ -58,8 +58,8 @@ public class LendingRecord {
     public void returnBook(LocalDate returnDate, double dailyFine) {
         this.returnDate = returnDate;
         if (returnDate.isAfter(dueDate)) {
-            // toEpochDay() converts a LocalDate to the number of days since January 1,
-            // 1970. Subtracting gives the difference in days.
+            // toEpochDay() converts a LocalDate to the number of days since January 1,1970.
+            // Subtracting gives the difference in days.
             long overdueDays = returnDate.toEpochDay() - dueDate.toEpochDay();
             fineCalculated = overdueDays * dailyFine;
             member.addFine(fineCalculated);

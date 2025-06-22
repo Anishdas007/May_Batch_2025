@@ -1,0 +1,14 @@
+<h2>
+    To do List
+</h2>
+
+<input type="text" [(ngModel)]="task" placeholder="Enter a task" />
+<button (click)="AddToTask()">Add task</button>
+
+<p>
+    Total: {{total}} |
+    ✅ Completed: {{completed}} |
+    ❗️ Pending: {{pending}}
+</p>
+
+<app-child-component>   </app-child-component>

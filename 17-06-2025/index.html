@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Example</title>
+  <style>
+    /* Optional basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn {
+      background-color: #008CBA; /* Blue */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 2s ease-in-out;
+    }
+    .active {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Button Page</h1>
+
+  <button class="btn">Click Me</button>
+
+  <script>
+   const btn = document.querySelector('.btn');
+   btn .addEventListener('click', handleClick);
+   btn.addEventListener('doubleclick', handleDoubleClick);
+
+    const handleDoubleClick = ()=>{
+        btn.classList.toggle('doubleActive');
+        alert('Button was double clicked!');
+        if( btn.classList.contains('doubleActive')) {
+           btn.backgroundColor = 'red';
+            btn.textContent = 'Double Clicked!';
+        } else {
+            btn.backgroundColor = '#008CBA'; // Reset to original color
+            btn.textContent = 'Click Me';
+        }
+    }
+
+    function handleClick() {
+      btn.classList.toggle('active');
+        if (btn.classList.contains('active')) {
+             setTimeout(() => {
+                btn.textContent = 'Clicked!';
+            }, 2000);
+        } else {
+            setTimeout(() => {
+                btn.textContent = 'Click Me';
+            }, 2000); 
+        }
+    }
+  </script>
+
+</body>
+</html>

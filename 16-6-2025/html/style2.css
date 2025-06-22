@@ -1,0 +1,45 @@
+/* General Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbars */
+  height: 100vh;
+  width: 100vw; 
+  background-color: #f0f0f0;
+}
+
+/* Box Styling */
+.rotating-box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  border-radius: 10px;
+  animation: moveAround 8s linear infinite;
+  border: 10px solid #16F529;
+  
+}
+
+/* Keyframes for rotating around page edges */
+@keyframes moveAround {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  35% {
+    top: 0;
+    left: calc(100vw - 50px);
+  }
+  50% {
+    top: calc(100vh - 50px);
+    left: calc(100vw - 50px);
+  }
+  85% {
+    top: calc(100vh - 50px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}

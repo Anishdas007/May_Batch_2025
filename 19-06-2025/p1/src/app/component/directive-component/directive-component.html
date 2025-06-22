@@ -1,0 +1,39 @@
+<div>
+    <h1>
+        Anular Directive Component
+    </h1>
+    <h2>
+        Sturctural Directive "ngIf"
+    </h2>
+    <button (click)="toggleVisibility()">Toggle visibility</button>
+    <div  *ngIf="isVisible">
+        <p>
+            This content is conditionally visible based on the "isVisible" property.
+        </p>
+    </div>
+    <h2>
+        Sturctural Directive "ngFor"
+    </h2>
+    <ul>
+        <li *ngFor="let item of items">
+            {{ item }}
+        </li>
+    </ul>
+    
+    <h2>
+        Attribute Directive: ngStyle
+    </h2>
+    <p [ngStyle]="{'color': textColor, 'font-size': fontSize}">This text changes color and size based on the directive.</p>
+    <button (click)="changeStyle()">change Style</button>
+    <h2>
+        Attribute Directive: ngClass
+    </h2>
+    <p [ngClass]="{'active-class': isActive, 'inactive-class': !isActive}">
+        This text is styled with ngClass.
+    </p>
+    <button (click)="toggleClass()">Toggle Class</button>
+    <h2>Custom Dirctive</h2>
+    <div appHighlight>
+        This div is highlighted by the custom directive.
+    </div>
+</div>
